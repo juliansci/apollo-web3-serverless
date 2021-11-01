@@ -1,0 +1,29 @@
+{
+  "name": "apollo-web3-serverless",
+  "version": "1.0.0",
+  "description": "Simple Apollo Server Serverless + Web3",
+  "main": "index.ts",
+  "scripts": {
+    "local:dev": "NODE_ENV=dev sls offline",
+    "deploy:dev": "NODE_ENV=dev sls deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "julian.scialabba@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-lambda": "^3.4.0",
+    "dotenv": "^10.0.0",
+    "graphql": "^16.0.0",
+    "web3": "^1.6.0",
+    "web3-eth-contract": "^1.6.0",
+    "web3-utils": "^1.6.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^8.2.0",
+    "serverless-plugin-typescript": "^2.1.0",
+    "typescript": "^4.4.4"
+  }
+}
