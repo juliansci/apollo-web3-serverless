@@ -2,7 +2,6 @@
   "name": "apollo-web3-serverless",
   "version": "1.0.0",
   "description": "Simple Apollo Server Serverless + Web3",
-  "main": "index.ts",
   "scripts": {
     "local:dev": "NODE_ENV=dev sls offline",
     "deploy:dev": "NODE_ENV=dev sls deploy"
@@ -18,7 +17,6 @@
     "dotenv": "^10.0.0",
     "graphql": "^16.0.0",
     "web3": "^1.6.0",
-    "web3-eth-contract": "^1.6.0",
     "web3-utils": "^1.6.0"
   },
   "devDependencies": {

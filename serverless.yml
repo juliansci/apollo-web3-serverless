@@ -1,12 +1,14 @@
-# serverless.yml
+service: apollo-web3-serverless
 
-service: apollo-lambda
 provider:
   name: aws
   runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+
 plugins:
-  - serverless-offline
   - serverless-plugin-typescript
+  - serverless-offline
+
 custom:
   stage: ${opt:stage, 'dev'}
   env-file: .env.${self:custom.stage}.json
@@ -14,13 +16,15 @@ custom:
     noPrependStageInUrl: true
 functions:
   graphql:
-    handler: index.serverHandler
+    handler: handler.serverHandler
     environment:
       WEB3_PROVIDER_URL: ${file(${self:custom.env-file}):web3.providerUrl}
     events:
       - http:
           path: /
           method: post
+          cors: true
       - http:
           path: /
           method: get
+          cors: true
